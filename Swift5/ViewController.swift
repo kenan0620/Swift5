@@ -12,7 +12,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        
+ 
+        
+    }
+    
+    
+    
+  
+    
+   
+  
+    /// 通用唯一识别码UUID
+    func UUID() -> String {
+        return (UIDevice.current.identifierForVendor?.uuidString)!
     }
 
 

@@ -14,6 +14,8 @@
 		0F073E082328A2AC003E05AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F073E062328A2AC003E05AC /* LaunchScreen.storyboard */; };
 		0F073E132328A2AC003E05AC /* Swift5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F073E122328A2AC003E05AC /* Swift5Tests.swift */; };
 		0F073E1E2328A2AC003E05AC /* Swift5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F073E1D2328A2AC003E05AC /* Swift5UITests.swift */; };
+		0F073E2C2328A3AB003E05AC /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F073E2B2328A3AB003E05AC /* PersonModel.swift */; };
+		0F073E2E2329EC99003E05AC /* SwiftTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F073E2D2329EC99003E05AC /* SwiftTourVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		0F073E192328A2AC003E05AC /* Swift5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F073E1D2328A2AC003E05AC /* Swift5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift5UITests.swift; sourceTree = "<group>"; };
 		0F073E1F2328A2AC003E05AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F073E2B2328A3AB003E05AC /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		0F073E2D2329EC99003E05AC /* SwiftTourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTourVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				0F073DFD2328A2A9003E05AC /* AppDelegate.swift */,
 				0F073DFF2328A2A9003E05AC /* ViewController.swift */,
+				0F073E2B2328A3AB003E05AC /* PersonModel.swift */,
+				0F073E2D2329EC99003E05AC /* SwiftTourVC.swift */,
 				0F073E012328A2A9003E05AC /* Main.storyboard */,
 				0F073E042328A2AC003E05AC /* Assets.xcassets */,
 				0F073E062328A2AC003E05AC /* LaunchScreen.storyboard */,
@@ -256,6 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F073E2E2329EC99003E05AC /* SwiftTourVC.swift in Sources */,
+				0F073E2C2328A3AB003E05AC /* PersonModel.swift in Sources */,
 				0F073E002328A2A9003E05AC /* ViewController.swift in Sources */,
 				0F073DFE2328A2A9003E05AC /* AppDelegate.swift in Sources */,
 			);
