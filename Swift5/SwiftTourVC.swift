@@ -18,7 +18,8 @@ class SwiftTourVC: UIViewController {
 //        controlFlow()
 //        functionsAndClosures()
 //        objAndClass()
-        enumAndStruct()
+//        enumAndStruct()
+        protocolAndExtension()
     }
  
     // MARK: - swift基本的使用 简单值
@@ -626,9 +627,125 @@ class SwiftTourVC: UIViewController {
 
     // MARK: - 协议和扩展
     func protocolAndExtension() -> () {
-       
+        
+        /**
+         mutating的本质：当我们ioption点击查看mutating的方法，可以看到
+         实际上是一个接受参数为self，返回一个函数的函数。以inout的方式传入自身，inout能够让函数修改传递过来的参数，并且在函数调用结束后将参数所做的改动保留下来。
+         
+         结论：mutating方法的第一个参数是self，并且以inout的方式传入，因为值类型在参数传递的时候会被复制，所以对于非mutating方法，self其实是值的副本，为了进行修改，self需要被声明为inout，而mutating的本质就是编译器帮我们完成的这个任务
+         */
+        
+        var a = SimpleClass()
+        a.addAdjust()
+        
+        let aDescription = a.simpleDescription
+        
+        print(aDescription)
+        
+        var b = SimpleStructure()
+        b.addAdjust()
+        let bDescription = b.simpleDescription
+        
+        print(bDescription)
+        
+
     }
 }
+
+protocol ExampleProtocol {
+    var simpleDescription : String{
+        get
+    }
+    mutating func adjust()
+    mutating func addAdjust()
+}
+
+/**
+ note: 使用关键字mutating关键字来声明
+ 在SimpleStructure中使方法可以修改结构图。
+ 在SimpleClass中则不需要这样声明
+ 因为类里的方法s总是可以修改其自身属性的
+ */
+
+class SimpleClass: ExampleProtocol {
+    var simpleDescription: String = "A very simple Class"
+    
+    var anotherProperty: Int = 69105
+    
+    func adjust() {
+        simpleDescription += "Now 100% adjusted"
+    }
+    
+    func addAdjust() {
+        simpleDescription += "add Now 100% adjusted"
+    }
+}
+
+struct SimpleStructure:ExampleProtocol {
+    var simpleDescription: String = "A simple structure"
+    mutating func adjust() {
+        simpleDescription += "(adjusted)"
+    }
+    
+    mutating func addAdjust() {
+        simpleDescription += "add (adjusted)"
+    }
+}
+
+struct Animal{
+    var leg : Int
+    var name : String
+    
+    init(name: String, leg: Int) {
+        self.name = name
+        self.leg = leg
+    }
+    
+    //标记这个方法为mutating使self变为可变的
+    mutating func changeName(newName: String){
+        self.name = newName
+    }
+}
+
+/**
+ 协议中，当在结构体或者枚举实现协议方法时，若对自身属性作修改，需要将协议的方法声明为mutating，对类无影响
+ */
+protocol Toggleable{
+    mutating func toggle()
+}
+
+enum lightbulb:Toggleable{
+    case on
+    case off
+    mutating func toggle() {
+        switch self {
+        case .on:
+            self = .off
+        case .off:
+            self = .on
+        }
+    }
+}
+
+class TableLamp: Toggleable {
+    var isOn: Bool = false
+    
+    func toggle() {
+        isOn = !isOn
+    }
+}
+
+extension lightbulb{
+    mutating func newToggle(isOn: Bool){
+        if isOn{
+            self = .on
+        }else{
+            self = .off
+        }
+    }
+}
+
+
 
 class Shape: NSObject {
     
