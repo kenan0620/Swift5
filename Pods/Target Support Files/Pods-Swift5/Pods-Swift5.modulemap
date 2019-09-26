@@ -1,0 +1,6 @@
+module Pods_Swift5 {
+  umbrella header "Pods-Swift5-umbrella.h"
+
+  export *
+  module * { export * }
+}

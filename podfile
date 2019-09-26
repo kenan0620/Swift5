@@ -1,0 +1,7 @@
+platform:ios,10.0
+
+target 'Swift5' do
+
+pod 'SnapKit'			#同OC Masnory 约束
+
+end 

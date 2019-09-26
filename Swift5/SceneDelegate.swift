@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             print("Hello Xcode11")
             
-            let rootVC = SwiftTourVC.init()
+            let rootVC = HomeVC.init()
             
             // Use a UIHostingController as window root view controller.
             if let windowScene = scene as? UIWindowScene {
