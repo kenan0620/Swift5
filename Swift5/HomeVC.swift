@@ -1,5 +1,5 @@
 //
-//  PersonModel.swift
+//  HomeVC.swift
 //  Swift5
 //
 //  Created by 柯南 on 2019/9/26.
@@ -10,10 +10,8 @@ import Foundation
 
 import UIKit
 
-class PersonModel: NSObject, NSCopying {
-    func copy(with zone: NSZone? = nil) -> Any {
-        return self;
+class HomeVC: UIViewController {
+    override func viewDidLoad() {
+        
     }
-    
-
 }

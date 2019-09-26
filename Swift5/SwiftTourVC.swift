@@ -2,9 +2,11 @@
 //  SwiftTourVC.swift
 //  Swift5
 //
-//  Created by coenen on 2019/9/12.
-//  Copyright © 2019 coenen. All rights reserved.
+//  Created by 柯南 on 2019/9/26.
+//  Copyright © 2019 柯南. All rights reserved.
 //
+
+import Foundation
 
 import UIKit
 
@@ -882,4 +884,3 @@ class TriangleAndSquare {
     }
     
 }
-
