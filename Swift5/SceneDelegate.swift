@@ -25,11 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("Hello Xcode11")
             
             let rootVC = HomeVC.init()
-            
-            // Use a UIHostingController as window root view controller.
+        // Use a UIHostingController as window root view controller.
             if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
-                window.rootViewController = rootVC
+                window.rootViewController = UINavigationController.init(rootViewController: rootVC)
                 self.window = window
                 window.makeKeyAndVisible()
             }

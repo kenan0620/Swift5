@@ -19,6 +19,7 @@
 		2756DEC2233C7EF7004BE935 /* SwiftTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756DEC1233C7EF7004BE935 /* SwiftTourVC.swift */; };
 		27FABD9D233C807700878A40 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FABD9C233C807700878A40 /* PersonModel.swift */; };
 		27FABD9F233C845900878A40 /* SwiftUIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FABD9E233C845900878A40 /* SwiftUIVC.swift */; };
+		27FABDA1233C868F00878A40 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FABDA0233C868F00878A40 /* Const.swift */; };
 		CB5377213ABF983F9DD860AA /* libPods-Swift5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A258132F90BC28B2DF00A7 /* libPods-Swift5.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		2756DEC1233C7EF7004BE935 /* SwiftTourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTourVC.swift; sourceTree = "<group>"; };
 		27FABD9C233C807700878A40 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		27FABD9E233C845900878A40 /* SwiftUIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIVC.swift; sourceTree = "<group>"; };
+		27FABDA0233C868F00878A40 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		4F82FCC3FEA305B951EF9F4C /* Pods-Swift5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift5.release.xcconfig"; path = "Target Support Files/Pods-Swift5/Pods-Swift5.release.xcconfig"; sourceTree = "<group>"; };
 		C2F5AEC1D972E3CF37ED83E6 /* Pods-Swift5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift5.debug.xcconfig"; path = "Target Support Files/Pods-Swift5/Pods-Swift5.debug.xcconfig"; sourceTree = "<group>"; };
 		C5A258132F90BC28B2DF00A7 /* libPods-Swift5.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Swift5.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				2756DEC1233C7EF7004BE935 /* SwiftTourVC.swift */,
 				27FABD9E233C845900878A40 /* SwiftUIVC.swift */,
 				27FABD9C233C807700878A40 /* PersonModel.swift */,
+				27FABDA0233C868F00878A40 /* Const.swift */,
 				274A5894233C7E5B00E6D4E4 /* Assets.xcassets */,
 				274A5899233C7E5B00E6D4E4 /* LaunchScreen.storyboard */,
 				274A589C233C7E5B00E6D4E4 /* Info.plist */,
@@ -161,7 +164,6 @@
 				C2F5AEC1D972E3CF37ED83E6 /* Pods-Swift5.debug.xcconfig */,
 				4F82FCC3FEA305B951EF9F4C /* Pods-Swift5.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -335,6 +337,7 @@
 				2756DEC0233C7E93004BE935 /* HomeVC.swift in Sources */,
 				274A5891233C7E5A00E6D4E4 /* SceneDelegate.swift in Sources */,
 				27FABD9F233C845900878A40 /* SwiftUIVC.swift in Sources */,
+				27FABDA1233C868F00878A40 /* Const.swift in Sources */,
 				274A5893233C7E5A00E6D4E4 /* ContentView.swift in Sources */,
 				2756DEC2233C7EF7004BE935 /* SwiftTourVC.swift in Sources */,
 			);
