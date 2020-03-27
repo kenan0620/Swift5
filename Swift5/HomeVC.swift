@@ -20,9 +20,9 @@ class HomeVC: UIViewController {
         return tableView
     }
     
-    lazy var testButton: UIButton = {
+    lazy var swiftTourBtn: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("testButton", for: .normal)
+        button.setTitle("SwiftTourBtn", for: .normal)
         button.setTitleColor(UIColor.brown, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.contentHorizontalAlignment = .left
@@ -35,14 +35,31 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         self.view.backgroundColor = AppThemeColor
         let swiftUIBtn = UIButton.init(type: .custom)
-        self.title = "首页"
+        self.title = NSStringFromClass(HomeVC.self)
 //        swiftUIBtn.frame = CGRect.init(x: 100, y: 100, width: 100, height: 100)
+        let textA = "Hello " + "world"
+        let textB = "Hello world"
         
+        let numberString = UserDefaults.standard.string(forKey: "SBFormattedPhoneNumber")
+        
+        print("SBFormattedPhoneNumber \(numberString)")
+        
+        let sdf: Array<String> = ["coenen"]
+        
+        let sdv: [String] = ["coenen"]
+        var array3D: [[[Int]]] = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+
+        print(array3D)
+        
+        print(textA)
+
+        print(textB)
+
         swiftUIBtn.backgroundColor = UIColor.yellow
         swiftUIBtn.setTitle("swiftUIBtn", for: .normal)
         swiftUIBtn.setTitleColor(UIColor.black, for: .normal)
         self.view.addSubview(swiftUIBtn)
-        self.view.addSubview(self.testButton)
+        self.view.addSubview(self.swiftTourBtn)
         
         swiftUIBtn.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(100)
@@ -50,7 +67,7 @@ class HomeVC: UIViewController {
 //            make.width.height.equalTo(100)
         }
         
-        self.testButton.snp.makeConstraints { (make) in
+        self.swiftTourBtn.snp.makeConstraints { (make) in
             make.top.equalTo(swiftUIBtn.snp.bottom).offset(10)
             make.left.equalTo(swiftUIBtn.snp.left)
             
@@ -59,7 +76,7 @@ class HomeVC: UIViewController {
         
         
         swiftUIBtn.addTarget(self, action: #selector(swiftUIBtnClick), for: .touchUpInside)
-        
+        self.swiftTourBtn.addTarget(self, action: #selector(swiftTourBtnClick), for: .touchUpInside)
         print(kScreenWidth)
     }
     
@@ -68,5 +85,12 @@ class HomeVC: UIViewController {
         
         self.navigationController?.pushViewController(swiftUIVC, animated: true)
         print("Click")
+    }
+    
+    @objc func swiftTourBtnClick() -> () {
+        let swiftTourVC = SwiftTourVC.init()
+        self.navigationController?.pushViewController(swiftTourVC, animated: true)
+        
+        print("swiftTourBtnClick")
     }
 }

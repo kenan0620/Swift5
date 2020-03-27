@@ -10,20 +10,204 @@ import Foundation
 
 import UIKit
 
+// Swift 3
+struct State {
+    var name: String
+    var abbreviation: String
+    var population: Int
+ 
+    // Change the dictionary type to [AnyHashable: Any] here...
+    var asPropertyList: [AnyHashable: Any] {
+        var result: [AnyHashable: Any] = [:]
+        // No implicit conversions necessary, since String and Int are subtypes
+        // of Any and AnyHashable
+        result["name"] = self.name
+        result["abbreviation"] = self.abbreviation
+        result["population"] = self.population
+        return result
+    }
+}
+
 class SwiftTourVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        self.title = NSStringFromClass(self.classForCoder)
 
+//        let dateStrinb = NSDate.init()
+//        print(dateStrinb.description)
+        
+        experimentHomework()
+//        translition()
 //        baseDefine()
 //        controlFlow()
 //        functionsAndClosures()
 //        objAndClass()
 //        enumAndStruct()
-        protocolAndExtension()
+//        protocolAndExtension()
+    }
+    
+    // MARK: - 官方教程实验题
+    
+    func experimentHomework() -> () {
+        //1
+        let numb :Float = 4
+        print(numb)
+        
+        //2  Binary operator '+' cannot be applied to operands of type 'String' and 'Int'
+        let label = "The width is "
+        let width = 94
+        let erprement2 = label + String(width)
+        
+        print(erprement2)
+        //3
+        let erprement3 = label + String(numb)
+        
+        let exprement3Result = "welcome \(erprement3) coenen"
+        
+        print(exprement3Result)
+        
+        // MARK: - ---------
+        let qutation = """
+        第一行
+        第二回
+        第三方
+        """
+        
+        print(qutation)
+        
+        var shopList: [Any] = [1,2,3,"df","g","r"]
+        shopList[1] = "sdf"
+        print(shopList)
+        
+        var options:[NSString : Any] = ["key1":"value1","key2":"2","key3":"value3","4":"value4","key5":"value4"]
+        
+        options["key5"] = "fd5"
+        print(options)
+        
+        let emptyArray = [String]()
+        let emptyDictionary = [String:String]()
+        
+//        如果类型信息能被推断，那么你就可以用[]来表示空数组，用[:]来表示空字典。举个栗子，当你给变量设置新的值或者传参数给函数的时候。
+
+        shopList = []
+        options = [:]
+        
+        
+        // MARK: - ---------
+
+        // MARK: - exprement4
+        var optionalString: String? = "Hello"
+        print(optionalString == nil)
+         
+        var optionalName: String? = nil
+        var greeting = "dfsd"
+
+        if let name = optionalName {
+            greeting = "Hello, \(name)"
+        }else{
+            greeting = "test new value"
+        }
+        
+        print(greeting)
+        
+        let nickName: String? = nil
+        let fullName: String = "John Appleseed"
+        let informalGreeting = "Hi \(nickName ?? fullName)"
+        
+        print(informalGreeting)
+        
+
+    //exprement5 Switch must be exhaustive
+        let vegetable = "red pepper"
+        switch vegetable {
+        case "celery":
+            print("Add some raisins and make ants on a log.")
+        case "cucumber", "watercress":
+            print("That would make a good tea sandwich.")
+        case let x where x.hasSuffix("pepper"):
+            print("Is it a spicy \(x)?")
+        default:
+            print("Everything tastes good in soup.")
+        }
+        //exprement6 Switch must be exhaustive
+
+        let interestingNumbers = [
+            "Prime": [2, 3, 5, 7, 11, 13],
+            "Fibonacci": [1, 1, 2, 3, 5, 8],
+            "Square": [1, 4, 9, 16, 25],
+        ]
+        var largest = 0
+        var kindString = ""
+        
+        for (kind, numbers) in interestingNumbers {
+            for number in numbers {
+                if number > largest {
+                    largest = number
+                    kindString = kind
+                }
+            }
+        }
+        print(String(largest) + kindString)
+        
+        let eat = greetSome(person: "coenen", eatSometing: "牛肉")
+        
+        print(eat)
+        
+        //exprement7 Switch must be exhaustive
+        print(sumOf(numbers: 42, 597, 12)
+)
+    }
+    func sumOf(numbers: Int...) -> Int {
+        var sum = 0
+        for number in numbers {
+            sum += number
+        }
+        
+        let result = sum/numbers.count
+        
+        return result
+    }
+    
+    func greetSome(person: String, eatSometing: String) -> String {
+        return "Hello \(person) eat \(eatSometing)."
+    }
+    // MARK: - 官方博客翻译
+    
+    func translition() -> () {
+        let california = State(name: "California",
+                               abbreviation: "CA",
+                               population: 39_000_000)
+        // ...and you can still use it with Cocoa API here
+       print(california)
+        
+        // Swift 3
+        let PaymentMade = Notification.Name("PaymentMade")
+         
+        // We can associate the CreditCard value directly with the Notification
+        let paymentNotification =
+            Notification(name: PaymentMade, object: nil, userInfo: california.asPropertyList)
+        print(paymentNotification)
+        
+    
+        var letters: [Character] = ["c","d","r"]
+        var string: String = String(letters)
+        
+        print(letters.count)
+        print(string)
+        print(string.count)
+        
+        let ac: Character = "\u{0303}"
+        string.append(ac)
+        
+        print(string.count)
+        print(string.last ?? (Any).self)
+        
+        
     }
  
+    
     // MARK: - swift基本的使用 简单值
  
     func baseDefine() -> () {

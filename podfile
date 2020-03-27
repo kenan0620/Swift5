@@ -2,6 +2,20 @@ platform:ios,10.0
 
 target 'Swift5' do
 
-pod 'SnapKit'			#同OC Masnory 约束
+pod 'ActiveLabel' #电话w、网页点击等
+pod 'Bugly' # 崩溃分析
+pod 'Charts' #图表
+pod 'FoldingCell' #折叠cell
+pod 'Hue' #字体、颜色库
+pod 'Instructions' #教程
+pod 'IQKeyboardManagerSwift' # 键盘相关
+pod 'Kingfisher' # 图片下载
+pod 'Log' #功能完整的日志管理库
+pod 'MJRefresh' #下拉刷新
+pod 'Moya/RxSwift' # 网络库
+pod 'NVActivityIndicatorView' #加载指示器
+pod 'ReachabilitySwift' # 网络状态判断
+pod 'SnapKit' # masonry布局swift版本
+pod 'SwiftyJSON' # json数据处理
 
 end 
